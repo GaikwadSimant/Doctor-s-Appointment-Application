@@ -1,17 +1,13 @@
 package com.geekster.DoctorsAppointmentApplication.model;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import lombok.Data;
 
+@Data
 @Embeddable
-public class AppointmentKey {
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long appointmentId;
-
-    public LocalDateTime time;
-
+public class AppointmentKey implements Serializable {
+    private Long appId;
+    private LocalDateTime time;
 }
